@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebApplication2.Models.train_details>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome to Railway Reservation System</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.train_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.train_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.source)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.destination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.start_DateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.end_DateTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.train_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.train_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.source)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.destination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.start_DateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.end_DateTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>*@

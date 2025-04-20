@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "AddData";
+}
+
+@model WebApplication2.Views.Admin.TrainDetails
+
+<h2>Add Train Details</h2>
+
+@using (Html.BeginForm("Submittrain_details", "Admin", FormMethod.Post))
+{
+    <label>Train Number : </label>
+    @Html.TextBoxFor(model => model.train_no, new { type = "number", required = "required" })
+    <br />
+
+    <label>Train Name : </label>
+    @Html.TextBoxFor(model => model.train_name, new { required = "required" })
+    <br />
+
+    <label>Source Station : </label>
+    @Html.DropDownListFor(model => model.source, new SelectList(new[]
+    {
+        "Pune", "Mumbai", "Delhi", "Nagpur", "Ahmedabad", "Kochi",
+        "Lucknow", "Hyderabad", "Bengaluru", "Chennai", "Gurgaon", "Kolkata"
+    }), "Select Source", new { id = "source", required = "required" })
+    <br />
+
+    <label>Destination Station : </label>
+    @Html.DropDownListFor(model => model.destination, new SelectList(new[]
+    {
+        "Pune", "Mumbai", "Delhi", "Nagpur", "Ahmedabad", "Kochi",
+        "Lucknow", "Hyderabad", "Bengaluru", "Chennai", "Gurgaon", "Kolkata"
+    }), "Select Destination", new { id = "destination", required = "required" })
+    <br />
+
+    @*<label>Date : </label>
+        @Html.TextBoxFor(model => model.journey_date, new { type = "date", required = "required" })
+        <br />*@
+
+    <label>Departure Date & Time:</label>
+    @Html.TextBoxFor(model => model.start_time, new { type = "datetime-local", required = "required" })
+    <br />
+
+    <label>Arrival Date & Time:</label>
+    @Html.TextBoxFor(model => model.end_time, new { type = "datetime-local", required = "required" })
+    <br />
+
+
+    for (int i = 0; i < Model.class_list.Count; i++)
+    {
+        <br />
+        <br />
+        <label>Class : @Model.class_list[i].Name</label>
+        <br />
+        for (int j = 0; j < Model.class_list[i].quota_list.Count; j++)
+        {
+            <br />
+            <label>Quota : @Model.class_list[i].quota_list[j].Name</label>
+            <br />
+            <label>Seating Capacity : </label>
+            @Html.TextBoxFor(model => model.class_list[i].quota_list[j].seating_capacity, new { type = "number", required = "required" })
+            <br />
+
+            <label>Price (Fare) : </label>
+            @Html.TextBoxFor(model => model.class_list[i].quota_list[j].price, new { type = "number", required = "required" })
+            <br />
+        }
+    }
+    <br />
+    <button type="submit">Add</button>
+}

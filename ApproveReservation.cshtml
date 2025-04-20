@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "ApproveReservation";
+}
+@model WebApplication2.Views.Admin.PassengerReservation
+<h2>Approve Reservation</h2>
+@using (Html.BeginForm("ApproveByRId", "Admin", FormMethod.Post))
+{
+    <label>Reservation Id : </label>
+    @Html.TextBoxFor(model => model.id, new { type = "number", required = "required" })
+    <br />
+
+    <label>PNR Nnmber : </label>
+    @Html.TextBoxFor(model => model.pnr_no, new { required = "required" })
+    <br />
+
+    <button type="submit">Approve</button>
+}
+

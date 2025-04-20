@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "ViewTrainData";
+}
+
+@model List<WebApplication2.Views.Admin.TrainTable>
+
+<h2>Added Train Details</h2>
+
+@if (Model.Count != 0)
+{
+    <div class="text-center">
+        <table class="table table-bordered">
+            <tr>
+                <th>Train No.</th>
+                <th>Train Name</th>
+                <th>Source Station</th>
+                <th>Destination Station</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>Class</th>
+                <th>Quota</th>
+                <th>Seating Capacity</th>
+                <th>Price (Fare)</th>
+            </tr>
+            @foreach (var trdetails in Model)
+            {
+                <tr>
+                    <td>@trdetails.train_no</td>
+                    <td>@trdetails.train_name</td>
+                    <td>@trdetails.source</td>
+                    <td>@trdetails.destination</td>
+                    <td>@trdetails.start_time</td>
+                    <td>@trdetails.end_time</td>
+                    <td>@trdetails.class_name</td>
+                    <td>@trdetails.quota_name</td>
+                    <td>@trdetails.seating_capacity</td>
+                    <td>@trdetails.price</td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+@if (Model.Count == 0)
+{
+    <p>No Train Details Added</p>
+}
+

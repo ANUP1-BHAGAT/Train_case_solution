@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "PendingReservations";
+}
+
+@model List<WebApplication2.Views.Admin.PassengerReservation>
+
+<h2>Pending Passenger Reservations</h2>
+
+@if (Model.Count != 0)
+{
+    <div class="text-center">
+        <table class="table table-bordered">
+            <tr>
+                <th>Reservation Id</th>
+                <th>Passenger Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Reservation status</th>
+                <th>Amount paid</th>
+            </tr>
+            @foreach (var pr in Model)
+            {
+                <tr>
+                    <td>@pr.id</td>
+                    <td>@pr.name</td>
+                    <td>@pr.age</td>
+                    <td>@pr.gender</td>
+                    <td>@pr.address</td>
+                    <td>@pr.current_status</td>
+                    <td>@pr.amount_paid</td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+@if (Model.Count == 0)
+{
+    <p>No Pending Passenger Reservations</p>
+}
+

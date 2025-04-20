@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "DeleteData";
+}
+
+@model WebApplication2.Views.Admin.TrainNum
+
+<h2>Delete Train Details</h2>
+@using (Html.BeginForm("DeleteByTrainNo", "Admin", FormMethod.Post))
+{
+    <label>Train Number : </label>
+    @Html.TextBoxFor(model => model.Num, new { type = "number", required = "required" })
+    <br />
+    <button type="submit">Delete</button>
+}
+
+
