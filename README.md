@@ -1,1 +1,2 @@
 # Train_case_solution
+This online platform facilitates the booking of railway tickets for travel between any pair of destinations covered by the train network. It allows users to make advance reservations in various travel classes, including allocations under general and ladies quotas. Bookings can be made for up to six passengers at once, including both adults and children, with the full fare payable at the time of reservation. The system supports ticketing for any route operated by a train between two stations.
